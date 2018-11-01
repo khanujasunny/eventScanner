@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Projects\\Android\\zbar-sample\\android-vision-master\\visionSamples\\barcode-reader\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v13\\values-v13.xml",
+            "outputFile": "D:\\Projects\\Android\\EventScanner-UI\\android\\EventScanner\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v13\\values-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Sunny\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.0.aar\\2ff30afaab206bf596132405c144e497\\res\\values-v13\\values-v13.xml",
+                    "source": "C:\\Users\\Sunny\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.0.aar\\9d6925f1f5d72ecda32b95602ac12e47\\res\\values-v13\\values-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

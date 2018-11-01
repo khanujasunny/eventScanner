@@ -5,78 +5,88 @@
     build-mode="COLD"
     density="xxhdpi"
     format="10"
+    ir-eligibility="FIELD_TYPE_CHANGE"
     plugin-version="3.2.1"
-    timestamp="1541089888234"
-    token="-6160758322271301952"
+    timestamp="1541096626416"
+    token="-3106341745656492712"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="657" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="30" />
     <task
         name="verifier"
-        duration="0" />
+        duration="12" />
 
     <artifact
-        location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
         type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1541089707936"
+        timestamp="1541095292789"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1541089888234"
+        timestamp="1541095995473"
+        verifier="FIELD_TYPE_CHANGE" >
+        <artifact
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="FIELD_TYPE_CHANGE"
+        timestamp="1541096626416"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            location="D:\Projects\Android\EventScanner-UI\android\EventScanner\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
     </build>
 

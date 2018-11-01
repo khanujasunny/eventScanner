@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Projects\\Android\\zbar-sample\\android-vision-master\\visionSamples\\barcode-reader\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-kn-rIN\\values-kn-rIN.xml",
+            "outputFile": "D:\\Projects\\Android\\EventScanner-UI\\android\\EventScanner\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-kn-rIN\\values-kn-rIN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Sunny\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.0.aar\\2ff30afaab206bf596132405c144e497\\res\\values-kn-rIN\\values-kn-rIN.xml",
+                    "source": "C:\\Users\\Sunny\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.0.aar\\9d6925f1f5d72ecda32b95602ac12e47\\res\\values-kn-rIN\\values-kn-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
