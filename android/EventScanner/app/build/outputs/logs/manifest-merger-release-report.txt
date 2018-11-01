@@ -1,0 +1,186 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:2:1-40:12
+MERGED from [com.android.support:design:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\aea3714d1d59f0d024ef00e9ca579371\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\33863f1104d1c3239968f2d0543d345c\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\d44ef43b156943b8ced83f96109072e1\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\387e5a8b1c9f2f1c6a2238a7780f32d8\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\f80f888e672152e5d7af0c72f9342e62\AndroidManifest.xml:16:1-26:12
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\2ff30afaab206bf596132405c144e497\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\01c289f595a0754d4910e9cd704c7faa\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:recyclerview-v7:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-24.2.0.aar\3b668800d17d5ba909892f7db149d0d6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\951e8997aab623e5647e5d2c94b624d4\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\6733548e32e833b1cb6a04ed4cce34d0\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\b01c7a6ab11c926d74fb707254105c4f\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\6401afe48d9cb909fd87e23c78e58946\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\95ad0d4848cce5bd90a6302e1d9bf0e1\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\14956d596b485dd7dd99beccdebad90c\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\9874171e8b2c8712b08d16ff558d5b88\AndroidManifest.xml:17:1-27:12
+INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:2:1-40:12
+	package
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:3:5-66
+		INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:2:1-40:12
+		INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:2:1-40:12
+		INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:2:11-69
+	android:installLocation
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:4:5-35
+uses-feature#android.hardware.camera
+ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:6:5-60
+	android:name
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:6:19-57
+uses-permission#android.permission.CAMERA
+ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:8:5-65
+	android:name
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:8:22-62
+uses-permission#android.permission.INTERNET
+ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:9:5-67
+	android:name
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:9:22-64
+application
+ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:11:5-38:19
+MERGED from [com.android.support:design:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\aea3714d1d59f0d024ef00e9ca579371\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\aea3714d1d59f0d024ef00e9ca579371\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\33863f1104d1c3239968f2d0543d345c\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\33863f1104d1c3239968f2d0543d345c\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\d44ef43b156943b8ced83f96109072e1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\d44ef43b156943b8ced83f96109072e1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\387e5a8b1c9f2f1c6a2238a7780f32d8\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\387e5a8b1c9f2f1c6a2238a7780f32d8\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\f80f888e672152e5d7af0c72f9342e62\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\f80f888e672152e5d7af0c72f9342e62\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\2ff30afaab206bf596132405c144e497\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\2ff30afaab206bf596132405c144e497\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\01c289f595a0754d4910e9cd704c7faa\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\01c289f595a0754d4910e9cd704c7faa\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\951e8997aab623e5647e5d2c94b624d4\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\951e8997aab623e5647e5d2c94b624d4\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\6733548e32e833b1cb6a04ed4cce34d0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\6733548e32e833b1cb6a04ed4cce34d0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\b01c7a6ab11c926d74fb707254105c4f\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\b01c7a6ab11c926d74fb707254105c4f\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\6401afe48d9cb909fd87e23c78e58946\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\6401afe48d9cb909fd87e23c78e58946\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\95ad0d4848cce5bd90a6302e1d9bf0e1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\95ad0d4848cce5bd90a6302e1d9bf0e1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\14956d596b485dd7dd99beccdebad90c\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\14956d596b485dd7dd99beccdebad90c\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\9874171e8b2c8712b08d16ff558d5b88\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\9874171e8b2c8712b08d16ff558d5b88\AndroidManifest.xml:25:5-20
+	android:supportsRtl
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:17:9-37
+	android:label
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:16:9-40
+	android:hardwareAccelerated
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:14:9-43
+	android:fullBackupContent
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:13:9-42
+	android:icon
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:15:9-38
+	android:allowBackup
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:12:9-35
+	android:theme
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:18:9-47
+meta-data#com.google.android.gms.version
+ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:19:9-21:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\f80f888e672152e5d7af0c72f9342e62\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\f80f888e672152e5d7af0c72f9342e62\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:21:13-66
+	android:name
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:20:13-58
+meta-data#com.google.android.gms.vision.DEPENDENCIES
+ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:22:9-24:39
+	android:value
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:24:13-36
+	android:name
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:23:13-70
+activity#com.google.android.gms.samples.vision.barcodereader.MainActivity
+ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:26:9-34:20
+	android:label
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:28:13-56
+	android:name
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:27:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:29:13-33:29
+action#android.intent.action.MAIN
+ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:30:17-69
+	android:name
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:30:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:32:17-77
+	android:name
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:32:27-74
+activity#com.google.android.gms.samples.vision.barcodereader.BarcodeCaptureActivity
+ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:36:9-37:43
+	android:label
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:37:13-41
+	android:name
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml:36:19-57
+uses-sdk
+INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\aea3714d1d59f0d024ef00e9ca579371\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\aea3714d1d59f0d024ef00e9ca579371\AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\33863f1104d1c3239968f2d0543d345c\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\33863f1104d1c3239968f2d0543d345c\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\d44ef43b156943b8ced83f96109072e1\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\d44ef43b156943b8ced83f96109072e1\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\387e5a8b1c9f2f1c6a2238a7780f32d8\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\387e5a8b1c9f2f1c6a2238a7780f32d8\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\f80f888e672152e5d7af0c72f9342e62\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\f80f888e672152e5d7af0c72f9342e62\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\2ff30afaab206bf596132405c144e497\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\2ff30afaab206bf596132405c144e497\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\01c289f595a0754d4910e9cd704c7faa\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\01c289f595a0754d4910e9cd704c7faa\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:recyclerview-v7:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-24.2.0.aar\3b668800d17d5ba909892f7db149d0d6\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-24.2.0.aar\3b668800d17d5ba909892f7db149d0d6\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\951e8997aab623e5647e5d2c94b624d4\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\951e8997aab623e5647e5d2c94b624d4\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\6733548e32e833b1cb6a04ed4cce34d0\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\6733548e32e833b1cb6a04ed4cce34d0\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\b01c7a6ab11c926d74fb707254105c4f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\b01c7a6ab11c926d74fb707254105c4f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\6401afe48d9cb909fd87e23c78e58946\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\6401afe48d9cb909fd87e23c78e58946\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\95ad0d4848cce5bd90a6302e1d9bf0e1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\95ad0d4848cce5bd90a6302e1d9bf0e1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\14956d596b485dd7dd99beccdebad90c\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\14956d596b485dd7dd99beccdebad90c\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\9874171e8b2c8712b08d16ff558d5b88\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\9874171e8b2c8712b08d16ff558d5b88\AndroidManifest.xml:21:5-23:58
+INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\2ff30afaab206bf596132405c144e497\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+		ADDED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Projects\Android\zbar-sample\android-vision-master\visionSamples\barcode-reader\app\src\main\AndroidManifest.xml
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\d44ef43b156943b8ced83f96109072e1\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\d44ef43b156943b8ced83f96109072e1\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\d44ef43b156943b8ced83f96109072e1\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\d44ef43b156943b8ced83f96109072e1\AndroidManifest.xml:20:19-85

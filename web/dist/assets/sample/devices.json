@@ -1,0 +1,22 @@
+[
+    {
+        "name" : "dell laptop",
+        "macAddress": "E0:94:67:84:F8:E1",
+        "dateAdded": "Aug 22, 2018"
+    },
+    {
+        "name" : "NOTE 8",
+        "macAddress": "A0:C9:A0:8D:C0:E1",
+        "dateAdded": "Aug 15, 2018"
+    },
+    {
+        "name" : "Redmi Note 3",
+        "macAddress": "AC:C1:EE:BE:68:47",
+        "dateAdded": "Aug 30, 2018"
+    },
+    {
+        "name" : "S8 plus",
+        "macAddress": "30:07:4D:8A:C9:14",
+        "dateAdded": "Aug 12, 2018"
+    }
+]

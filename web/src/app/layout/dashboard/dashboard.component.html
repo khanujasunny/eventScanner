@@ -1,0 +1,107 @@
+<div [@routerTransition]>
+    <h2 class="text-muted">Dashboard <small>Statistics Overview</small></h2>
+    <div class="row">
+        <div class="col-md-12">
+            <ngb-carousel>
+                <ng-template ngbSlide *ngFor="let slider of sliders">
+                    <img class="img-fluid mx-auto d-block" [src]="slider.imagePath" alt="Random first slide"  height="500px">
+                    <div class="carousel-caption">
+                        <h3>{{slider.label}}</h3>
+                        <p>{{slider.text}}</p>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4" *ngIf="projects">
+            <app-stat [bgClass]="'primary'" [icon]="'fa-tasks'" [count]="projects.data.length" [label]="'Projects'" ></app-stat>
+        </div>
+        <div class="col-xl-4 col-lg-4" *ngIf="events">
+            <app-stat [bgClass]="'danger'" [icon]="'fa-calendar'" [count]="events.data.length" [label]="'Events'"></app-stat>
+        </div>
+        <div class="col-xl-4 col-lg-4" *ngIf="users">
+            <app-stat [bgClass]="'success'" [icon]="'fa-user'" [count]="users.data.length" [label]="'Users'" ></app-stat>
+        </div>
+    </div>
+    <hr />
+    <hr />
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12" *ngIf="events ">
+            <div class="card mb-3">
+                <div class="card-header">Events</div>
+                <table class="card-body table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>SID</th>
+                        <th *ngIf="users">User Name</th>
+                        <th>Project Code</th>
+                        <th *ngIf="projects">Project Name</th>
+                        <th>Added Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let event of events.data">
+                        <th scope="row">{{event.id}}</th>
+                        <td>{{event.SID}}</td>
+                        <td *ngIf="users">{{getName(event.SID)}}</td>
+                        <td>{{event.projectCode}}</td>
+                        <td *ngIf="projects">{{getProject(event.projectCode)}}</td>
+                        <td>{{event.addedDate | date}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-danger" (click)="clearEvents()">Clear Events</button>
+            </div>
+        </div>
+
+        <div class="col col-xl-6 col-lg-12" *ngIf="users">
+            <div class="card mb-3">
+                <div class="card-header">Users</div>
+                <table class="card-body table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>SID</th>
+                        <th>Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let user of users.data">
+                        <th scope="row">{{user.id}}</th>
+                        <td>{{user.sid}}</td>
+                        <td>{{user.name}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col col-xl-6 col-lg-12" *ngIf="projects">
+            <div class="card mb-3">
+                <div class="card-header">Projects</div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Bar Code</th>
+                            <th>Created Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let project of projects.data">
+                            <th scope="row">{{project.id}}</th>
+                            <td>{{project.name}}</td>
+                            <td>{{project.barCode}}</td>
+                            <td>{{project.createdDate | date}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
