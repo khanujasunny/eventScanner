@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-40:12
+ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-41:12
 MERGED from [com.android.support:design:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\7a1c4ea5f9ae2a8da66f1831c44da849\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\7b62b6a326463e2c5bb4bb3e7c509125\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\c2f2e49af2861881f82ffa4fc8d020b2\AndroidManifest.xml:16:1-24:12
@@ -19,20 +19,20 @@ MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Sunny\
 MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\701ec3a7e36db8f31935e68ca503c673\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\fe6b1c55dabe64ca1aae13da51a85004\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\bedc1406e3e8006e4e737f6f8a659f72\AndroidManifest.xml:17:1-27:12
-INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-41:12
 	package
 		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:3:5-66
 		INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-40:12
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-40:12
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:2:11-69
@@ -51,7 +51,7 @@ ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main
 	android:name
 		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:9:22-64
 application
-ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:11:5-38:19
+ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:12:5-39:19
 MERGED from [com.android.support:design:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\7a1c4ea5f9ae2a8da66f1831c44da849\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\7a1c4ea5f9ae2a8da66f1831c44da849\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\7b62b6a326463e2c5bb4bb3e7c509125\AndroidManifest.xml:5:5-20
@@ -81,55 +81,55 @@ MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Sunny\.gr
 MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\bedc1406e3e8006e4e737f6f8a659f72\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\bedc1406e3e8006e4e737f6f8a659f72\AndroidManifest.xml:25:5-20
 	android:supportsRtl
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:18:9-37
+	android:label
 		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:17:9-37
-	android:label
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:16:9-40
 	android:hardwareAccelerated
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:14:9-43
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:15:9-43
 	android:fullBackupContent
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:13:9-42
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:14:9-42
 	android:icon
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:15:9-38
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:16:9-38
 	android:allowBackup
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:13:9-35
 	android:theme
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:18:9-47
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:19:9-47
 meta-data#com.google.android.gms.version
-ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:19:9-21:69
+ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:20:9-22:69
 MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\db251e3bf9fe3b08a53af92a3f139876\AndroidManifest.xml:21:9-23:69
 MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Sunny\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\db251e3bf9fe3b08a53af92a3f139876\AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:21:13-66
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:22:13-66
 	android:name
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:20:13-58
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:21:13-58
 meta-data#com.google.android.gms.vision.DEPENDENCIES
-ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:22:9-24:39
+ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:23:9-25:39
 	android:value
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:24:13-36
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:25:13-36
 	android:name
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:23:13-70
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:24:13-70
 activity#com.google.android.gms.samples.vision.barcodereader.MainActivity
-ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:26:9-34:20
+ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:27:9-35:20
 	android:label
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:28:13-56
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:29:13-56
 	android:name
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:27:13-41
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:28:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:29:13-33:29
+ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:30:13-34:29
 action#android.intent.action.MAIN
-ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:30:17-69
+ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:32:17-77
+ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:33:17-77
 	android:name
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:32:27-74
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:33:27-74
 activity#com.google.android.gms.samples.vision.barcodereader.BarcodeCaptureActivity
-ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:36:9-37:43
+ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:37:9-38:43
 	android:label
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:37:13-41
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:38:13-41
 	android:name
-		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:36:19-57
+		ADDED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml:37:19-57
 uses-sdk
 INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Projects\Android\EventScanner-UI\android\EventScanner\app\src\main\AndroidManifest.xml

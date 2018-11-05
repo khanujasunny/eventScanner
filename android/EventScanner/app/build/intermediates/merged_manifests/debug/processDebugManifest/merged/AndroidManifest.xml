@@ -6,7 +6,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="19"
+        android:minSdkVersion="23"
         android:targetSdkVersion="24" />
 
     <uses-feature android:name="android.hardware.camera" />
@@ -20,9 +20,8 @@
         android:fullBackupContent="false"
         android:hardwareAccelerated="true"
         android:icon="@drawable/icon"
-        android:label="MultiTrackerApp"
+        android:label="EventScanner"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.AppCompat" >
         <meta-data
             android:name="com.google.android.gms.version"

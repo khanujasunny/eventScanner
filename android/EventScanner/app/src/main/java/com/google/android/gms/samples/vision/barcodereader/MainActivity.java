@@ -16,15 +16,21 @@
 
 package com.google.android.gms.samples.vision.barcodereader;
 
+import android.Manifest;
+import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -33,6 +39,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -80,12 +87,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     // AWS Iot CLI describe-endpoint call returns: XXXXXXXXXX.iot.<region>.amazonaws.com
 //    private static final String CUSTOMER_SPECIFIC_ENDPOINT = "arn:aws:iot:us-east-1:033833258996";
     private static final String CUSTOMER_SPECIFIC_ENDPOINT = "a1a5vmkre2h9ju-ats.iot.us-east-1.amazonaws.com";
-    // Cognito pool ID. For this app, pool needs to be unauthenticated pool with
-    // AWS IoT permissions.
-    private static final String COGNITO_POOL_ID = "CHANGE_ME";
-    // Name of the AWS IoT policy to attach to a newly created certificate
-    private static final String AWS_IOT_POLICY_NAME = "CHANGE_ME";
-
     // Region of AWS IoT
     private static final Regions MY_REGION = Regions.US_EAST_1;
     // Filename of KeyStore file on the filesystem
@@ -93,20 +94,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
     // Password for the private key in the KeyStore
     private static final String KEYSTORE_PASSWORD = "eventscan-private.pem.key";
     // Certificate and key aliases in the KeyStore
-    private static final String CERTIFICATE_ID = "default";
+    private static final String CERTIFICATE_ID = "5eeefa2582cbf1d2c0ed87544a1953b8d173701a61b909866d5ebe62fa166510";
 
-    AWSIotClient mIotAndroidClient;
     AWSIotMqttManager mqttManager;
-    String clientId;
-    String keystorePath;
-    String keystoreName;
-    String keystorePassword;
-
-    KeyStore clientKeyStore = null;
-    String certificateId;
-
-    CognitoCachingCredentialsProvider credentialsProvider;
-
+    private KeyStore clientKeyStore;
+//    private String keystorePath = "/sdcard/Download";
+    private String keystorePath;
+    private boolean readyToScan = false;
+    private Button btnReadBarcode;
+    private CheckBox disableValidation;
     /*AWS Related Stuffs ENDS*/
 
 
@@ -116,14 +112,40 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.main_activity);
 
         resetProject = (Button) findViewById(R.id.reset_project);
+        btnReadBarcode = (Button) findViewById(R.id.read_barcode);
         statusMessage = (TextView)findViewById(R.id.status_message);
         barcodeValue = (TextView)findViewById(R.id.barcode_value);
 
         autoFocus = (CompoundButton) findViewById(R.id.auto_focus);
         useFlash = (CompoundButton) findViewById(R.id.use_flash);
+        disableValidation = (CheckBox) findViewById(R.id.disableValidation);
+
         autoFocus.setChecked(true);
         findViewById(R.id.read_barcode).setOnClickListener(this);
         resetProject.setOnClickListener(this);
+
+        keystorePath = getApplicationContext().getFilesDir().getPath();
+        connectAWSServer();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults)
+    {
+        switch (requestCode) {
+            case 1: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    connectAWSServer();
+                } else {
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(MainActivity.this, "Permission denied to read your External storage", Toast.LENGTH_SHORT).show();
+                    statusMessage.setText("Permission denied to read your External storage.");
+                    barcodeValue.setText("Please goto Settings and allow file storage");
+                }
+            }
+        }
     }
 
     /**
@@ -143,7 +165,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
 
         if (v.getId() == R.id.reset_project) {
-            postToAWSServer("W514276","PROJECTID");
             projectID = null;
             statusMessage.setText("Scan Barcode");
             barcodeValue.setText("Please select a valid Project");
@@ -199,7 +220,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private void postToServer(String code){
         if(projectID == null){
-            if(!code.contains("ES")){
+            if(!code.contains("ES") && !disableValidation.isChecked()){
                 statusMessage.setText("Please scan valid project first");
                 barcodeValue.setText(code+" is not a valid project id");
             }else{
@@ -208,11 +229,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 barcodeValue.setText("Project Selected: "+code);
             }
         }else{
-            if(Character.isAlphabetic(code.charAt(0)) && !code.contains("ES")){
-
+            if((Character.isAlphabetic(code.charAt(0)) && !code.contains("ES")) || disableValidation.isChecked()){
                 JSONObject postData = new JSONObject();
                 statusMessage.setText("Sending to Server...");
-                this.postToAWSServer(projectID,code);
+                postToAWSServer(code,projectID);
                 /*try {
                     postData.put("projectCode", projectID);
                     postData.put("SID", code);
@@ -230,8 +250,91 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
 
-    private void connectAWS(){
+    private void connectAWSServer(){
+        String keyPem = "-----BEGIN RSA PRIVATE KEY-----\n" +
+                "MIIEpQIBAAKCAQEA0Ew43PHViJUDoIjnUqN2+zHqIP8NPPBweSZF1OnuqVyafE61\n" +
+                "RMotiHDQqnFQBY0IbM/FE9dy7xlIEJmWY55MQQgU49JRoUxdy5xs6526yKAL72Jo\n" +
+                "UZDWV3Y601dnlJEQiJ4wSUdMeKTw6eC9f5J/BvFVOEdwDXph6BCTJGv1n5at/gRS\n" +
+                "n/fCoGwS3sEutVruG8QOt8N7ojEZvaBavMMOvbe5P6EJ1b8UqHOBQJPvDNnUj3q3\n" +
+                "+wWb7A7mGSYH2D+UNOJigQyXBawj9l4FckiQNHvDsUDpoOc9YabOFycJzMQWOHi0\n" +
+                "aH0h/cWSKtH6o9tVJ5vHZOwETydiVQ7MvA1ayQIDAQABAoIBAQCTD5198Iev/HUp\n" +
+                "HD8lix9vzhfc3/W6to7SGgFnhxnnHOg9J1y3in6HPA82pvW2VZJDMJWVoqEUyial\n" +
+                "Aaq5/oMbztbg2haj6MS4AmKsHxpGlyiWBEZegAG0klaJ68XHkHu52OWCdwI4k0s7\n" +
+                "9F4V+ZoRjsV6DIXCHkuNilY4erhZyMQciiMq2WwhRyhOrS46h/Sx7K7n2TDa56WM\n" +
+                "cmOtHvOuV5wwwrPrWVDwJ3E2iI5XgqmSCL4eUuWxnFQznOHv4FE3n5SD3aqo7Jho\n" +
+                "ajih7evm24JXNj8E2wnPyxVZ+xi0nTX3mArnQP2ySyE6wQYrOsdhECxBKGO7o3pR\n" +
+                "iSFKEFN5AoGBAO8+I5um3c3ELhZiQJB+r6NXRG93gTfTFR52/h61qhqa6PKBwO29\n" +
+                "wADKjCBEJDtNe/ntxH8J/G+JBVzfERtEede5VeE6Nf7367c1UHjE1N17ghH5NNE6\n" +
+                "dZ0/xA5sd+XcktmznxUFEx6u1a+MYlyWRA483Waet88Iha4g82CeTRvbAoGBAN7j\n" +
+                "NWDd9y7tmMUSQSQyL8LiUs1hTMMbF9zYZlNEmJFFDy+B9kJTH56er0IaOdSclQ3C\n" +
+                "7by0FN6X/EfXXEyLQvr96wDjD005w2IMVslCn2hhXLOYmIxZa2GCGF2e4sd6BkQS\n" +
+                "fP2dZdjXzSzpx4y5H3INFRRyvpaQQTO6R3gumxcrAoGAJsHhUOD6g9ApSzUFkqMD\n" +
+                "XynPC2PHyjxm6nWKe30gnojD/i1pDNq1lSs7Aisn13eZAwcy0wXSIFuJQ99bTRiN\n" +
+                "yJXcxM0CXFjbleWMMNRqS6srii/eD5sx3JSs9U07K0DNhXkk52nYDBt0wKi0cp1h\n" +
+                "TxErKOnDi0WtKmVqKBfdFAsCgYEAlBgRinhRWfwCqsazQ7KY63tnmxEQaP6if1nF\n" +
+                "u4Pzf2qMaXuHvY/vjXxQZLJ6RFt56jffsKdSyoff13gv2qgZbB20vNUhgKVlvcsH\n" +
+                "CxjaRAeVCbvVeEOdxp8jQ2ljszjP2wERzY18c3UH3dTDgywpyaUJoZmQKwhUWmNm\n" +
+                "Q2NsJxsCgYEAoSBM/tXZWP2Fy81IsH56aFsMvVGDvInQ3sG6BW4W8KKJFmM4v9xU\n" +
+                "MzybkPDmIZGYVi8hESFRcNGSYZ+Hw2GWu3tzEvNnrZzoo9pFE4NKkgXnAZQ/O2iR\n" +
+                "9RNDoWsKUWeZwuRJ2fP0XN5UwR3DtAlWcelqQHRgXave6LiwUQkCUco=\n" +
+                "-----END RSA PRIVATE KEY-----\n";
+
+        String certPem = "-----BEGIN CERTIFICATE-----\n" +
+                "MIIDWjCCAkKgAwIBAgIVAPLbYhS4Z6fN7bSH0PkVUHUy12uZMA0GCSqGSIb3DQEB\n" +
+                "CwUAME0xSzBJBgNVBAsMQkFtYXpvbiBXZWIgU2VydmljZXMgTz1BbWF6b24uY29t\n" +
+                "IEluYy4gTD1TZWF0dGxlIFNUPVdhc2hpbmd0b24gQz1VUzAeFw0xODExMDExMjM0\n" +
+                "MzJaFw00OTEyMzEyMzU5NTlaMB4xHDAaBgNVBAMME0FXUyBJb1QgQ2VydGlmaWNh\n" +
+                "dGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDQTDjc8dWIlQOgiOdS\n" +
+                "o3b7Meog/w088HB5JkXU6e6pXJp8TrVEyi2IcNCqcVAFjQhsz8UT13LvGUgQmZZj\n" +
+                "nkxBCBTj0lGhTF3LnGzrnbrIoAvvYmhRkNZXdjrTV2eUkRCInjBJR0x4pPDp4L1/\n" +
+                "kn8G8VU4R3ANemHoEJMka/Wflq3+BFKf98KgbBLewS61Wu4bxA63w3uiMRm9oFq8\n" +
+                "ww69t7k/oQnVvxSoc4FAk+8M2dSPerf7BZvsDuYZJgfYP5Q04mKBDJcFrCP2XgVy\n" +
+                "SJA0e8OxQOmg5z1hps4XJwnMxBY4eLRofSH9xZIq0fqj21Unm8dk7ARPJ2JVDsy8\n" +
+                "DVrJAgMBAAGjYDBeMB8GA1UdIwQYMBaAFJni/wPjzOFT4WHF873qWdnI1LwkMB0G\n" +
+                "A1UdDgQWBBR75YVqXmTupuwNk7wH02eqvj8OBjAMBgNVHRMBAf8EAjAAMA4GA1Ud\n" +
+                "DwEB/wQEAwIHgDANBgkqhkiG9w0BAQsFAAOCAQEAlGwgdTBnSJUumLtWNSWu2bhS\n" +
+                "+guXTHvrRypS6R8UOoka/ZD3CC4HKRGN97OTM+OX2nE+wt7zSz5V5y6Hc1YwZCaj\n" +
+                "20/mUAfYgjcz8o6wiZTW0BswvBEyI2E7pzjPDWcfIypLeyrsDuqwtX34XFoeZxjC\n" +
+                "djCeawBSuhwyP4QjN9MmuXes2xpQGcXecANFMxjRssQOs51f9pihmk2Tngxc8Tt5\n" +
+                "CEljRjroKtRmykM7XMdHqc+A4BqpnorVkjjsG2EKq4gkFDICy6o3h0D6J3icbMHK\n" +
+                "ZwsIF3SRBk0JTpRI/86FvRaBf4ZXul1P4nWAjqbOKqcuqqFgcVnImOm7KfB4xA==\n" +
+                "-----END CERTIFICATE-----\n";
+
+        // Code started here
         try {
+            if (AWSIotKeystoreHelper.isKeystorePresent(keystorePath,KEYSTORE_NAME)){
+                if(AWSIotKeystoreHelper.keystoreContainsAlias(CERTIFICATE_ID,keystorePath,KEYSTORE_NAME,"keystorePassword")){
+                    AWSIotKeystoreHelper.deleteKeystoreAlias(CERTIFICATE_ID,keystorePath,KEYSTORE_NAME,"keystorePassword");
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "An error occurred delete alias from keystore.", e);
+        }
+        AWSIotKeystoreHelper.saveCertificateAndPrivateKey(CERTIFICATE_ID, certPem, keyPem,keystorePath,KEYSTORE_NAME,"keystorePassword");
+
+        // To load cert/key from keystore on filesystem
+        try {
+            if (AWSIotKeystoreHelper.isKeystorePresent(keystorePath, KEYSTORE_NAME)) {
+                if (AWSIotKeystoreHelper.keystoreContainsAlias(CERTIFICATE_ID, keystorePath,
+                        KEYSTORE_NAME, "keystorePassword")) {
+                    Log.i(TAG, "Certificate " + CERTIFICATE_ID
+                            + " found in keystore - using for MQTT.");
+                    // load keystore from file into memory to pass on connection
+                    clientKeyStore = AWSIotKeystoreHelper.getIotKeystore(CERTIFICATE_ID,
+                            keystorePath, KEYSTORE_NAME, "keystorePassword");
+                    Log.i(TAG, "Client kystore is ready");
+                } else {
+                    Log.i(TAG, "Key/cert " + CERTIFICATE_ID + " not found in keystore.");
+                }
+            } else {
+                Log.i(TAG, "Keystore " + keystorePath + "/" + KEYSTORE_NAME + " not found.");
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "An error occurred retrieving cert/key from keystore.", e);
+        }
+        try {
+            String clientId = UUID.randomUUID().toString();
+            mqttManager = new AWSIotMqttManager(clientId, CUSTOMER_SPECIFIC_ENDPOINT);
             mqttManager.connect(clientKeyStore, new AWSIotMqttClientStatusCallback() {
                 @Override
                 public void onStatusChanged(final AWSIotMqttClientStatus status,
@@ -243,17 +346,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         public void run() {
                             if (status == AWSIotMqttClientStatus.Connecting) {
                                 statusMessage.setText("Connecting...");
-
                             } else if (status == AWSIotMqttClientStatus.Connected) {
-                                statusMessage.setText("Connected");
-
+                                statusMessage.setText("Ready to Scan Barcode");
+                                readyToScan = true;
+                                btnReadBarcode.setEnabled(true);
                             } else if (status == AWSIotMqttClientStatus.Reconnecting) {
                                 if (throwable != null) {
+                                    statusMessage.setText("Connection error: Reconnecting");
                                     Log.e(TAG, "Connection error.", throwable);
                                 }
                                 statusMessage.setText("Reconnecting");
                             } else if (status == AWSIotMqttClientStatus.ConnectionLost) {
                                 if (throwable != null) {
+                                    statusMessage.setText("Connection error: ConnectionLost");
                                     Log.e(TAG, "Connection error.", throwable);
                                 }
                                 statusMessage.setText("Disconnected");
@@ -271,188 +376,24 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
     }
 
+
     private void postToAWSServer(String ssid, String meetid){
 
-        // MQTT client IDs are required to be unique per AWS IoT account.
-        // This UUID is "practically unique" but does not _guarantee_
-        // uniqueness.
-        clientId = UUID.randomUUID().toString();
+        final String topic = "meetingattendees";
+        final String msg = "{\"ssid\":\""+ssid+"\",\"meetid\":\""+meetid+"\"}";
 
-        // Initialize the AWS Cognito credentials provider
-        credentialsProvider = new CognitoCachingCredentialsProvider(
-                getApplicationContext(), // context
-                COGNITO_POOL_ID, // Identity Pool ID
-                MY_REGION // Region
-        );
-
-        Region region = Region.getRegion(MY_REGION);
-
-        // MQTT Client
-        mqttManager = new AWSIotMqttManager(clientId, CUSTOMER_SPECIFIC_ENDPOINT);
-
-        // Set keepalive to 10 seconds.  Will recognize disconnects more quickly but will also send
-        // MQTT pings every 10 seconds.
-        mqttManager.setKeepAlive(10);
-
-        // Set Last Will and Testament for MQTT.  On an unclean disconnect (loss of connection)
-        // AWS IoT will publish this message to alert other clients.
-        AWSIotMqttLastWillAndTestament lwt = new AWSIotMqttLastWillAndTestament("topic/meetingattendees",
-                "Android client lost connection", AWSIotMqttQos.QOS0);
-        mqttManager.setMqttLastWillAndTestament(lwt);
-
-        // IoT Client (for creation of certificate if needed)
-        mIotAndroidClient = new AWSIotClient(credentialsProvider);
-        mIotAndroidClient.setRegion(region);
-
-        keystorePath = getFilesDir().getPath();
-        Log.d(TAG,keystorePath);
-        keystoreName = KEYSTORE_NAME;
-        keystorePassword = KEYSTORE_PASSWORD;
-        certificateId = CERTIFICATE_ID;
-
-        // To load cert/key from keystore on filesystem
         try {
-            if (AWSIotKeystoreHelper.isKeystorePresent(keystorePath, keystoreName)) {
-                if (AWSIotKeystoreHelper.keystoreContainsAlias(certificateId, keystorePath,
-                        keystoreName, keystorePassword)) {
-                    Log.i(TAG, "Certificate " + certificateId
-                            + " found in keystore - using for MQTT.");
-                    // load keystore from file into memory to pass on connection
-                    clientKeyStore = AWSIotKeystoreHelper.getIotKeystore(certificateId,
-                            keystorePath, keystoreName, keystorePassword);
-                    connectAWS();
-                } else {
-                    Log.i(TAG, "Key/cert " + certificateId + " not found in keystore.");
-                }
-            } else {
-                Log.i(TAG, "Keystore " + keystorePath + "/" + keystoreName + " not found.");
-            }
+            mqttManager.publishString(msg, topic, AWSIotMqttQos.QOS0);
+            statusMessage.setText("SID "+ssid+" Published");
         } catch (Exception e) {
-            Log.e(TAG, "An error occurred retrieving cert/key from keystore.", e);
+            statusMessage.setText("Publish error."+e.getMessage());
+            Log.e(TAG, "Publish error.", e);
         }
-
-        if (clientKeyStore == null) {
-            Log.i(TAG, "Cert/key was not found in keystore - creating new key and certificate.");
-
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        // Create a new private key and certificate. This call
-                        // creates both on the server and returns them to the
-                        // device.
-                        CreateKeysAndCertificateRequest createKeysAndCertificateRequest =
-                                new CreateKeysAndCertificateRequest();
-                        createKeysAndCertificateRequest.setSetAsActive(true);
-                        final CreateKeysAndCertificateResult createKeysAndCertificateResult;
-                        createKeysAndCertificateResult =
-                                mIotAndroidClient.createKeysAndCertificate(createKeysAndCertificateRequest);
-                        Log.i(TAG,
-                                "Cert ID: " +
-                                        createKeysAndCertificateResult.getCertificateId() +
-                                        " created.");
-
-                        // store in keystore for use in MQTT client
-                        // saved as alias "default" so a new certificate isn't
-                        // generated each run of this application
-                        AWSIotKeystoreHelper.saveCertificateAndPrivateKey(certificateId,
-                                createKeysAndCertificateResult.getCertificatePem(),
-                                createKeysAndCertificateResult.getKeyPair().getPrivateKey(),
-                                keystorePath, keystoreName, keystorePassword);
-
-                        // load keystore from file into memory to pass on
-                        // connection
-                        clientKeyStore = AWSIotKeystoreHelper.getIotKeystore(certificateId,
-                                keystorePath, keystoreName, keystorePassword);
-
-                        // Attach a policy to the newly created certificate.
-                        // This flow assumes the policy was already created in
-                        // AWS IoT and we are now just attaching it to the
-                        // certificate.
-                        AttachPrincipalPolicyRequest policyAttachRequest =
-                                new AttachPrincipalPolicyRequest();
-                        policyAttachRequest.setPolicyName(AWS_IOT_POLICY_NAME);
-                        policyAttachRequest.setPrincipal(createKeysAndCertificateResult
-                                .getCertificateArn());
-                        mIotAndroidClient.attachPrincipalPolicy(policyAttachRequest);
-
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                connectAWS();
-                            }
-                        });
-                    } catch (Exception e) {
-                        Log.e(TAG,
-                                "Exception occurred when generating new private key and certificate.",
-                                e);
-                    }
-                }
-            }).start();
-        }
-
 
 
 
     }
 
-
-    private class SendDeviceDetailsAWS extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected String doInBackground(String... params) {
-
-            String data = "";
-
-            HttpURLConnection httpURLConnection = null;
-            try {
-
-                httpURLConnection = (HttpURLConnection) new URL(params[0]).openConnection();
-                httpURLConnection.setRequestMethod("POST");
-
-                httpURLConnection.setDoOutput(true);
-
-                DataOutputStream wr = new DataOutputStream(httpURLConnection.getOutputStream());
-                wr.writeBytes("PostData=" + params[1]);
-                wr.flush();
-                wr.close();
-
-                InputStream in = httpURLConnection.getInputStream();
-                InputStreamReader inputStreamReader = new InputStreamReader(in);
-
-                int inputStreamData = inputStreamReader.read();
-                while (inputStreamData != -1) {
-                    char current = (char) inputStreamData;
-                    inputStreamData = inputStreamReader.read();
-                    data += current;
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                if (httpURLConnection != null) {
-                    httpURLConnection.disconnect();
-                }
-            }
-
-            return data;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            Log.d(TAG,result);
-            super.onPostExecute(result);
-            try {
-                JSONObject message = new JSONObject(result);
-                statusMessage.setText(message.getString("message"));
-            } catch (JSONException e) {
-                statusMessage.setText("Server recived data");
-                e.printStackTrace();
-            }
-
-
-            Log.e("someTAG here", result); // this is expecting a response code to be sent from your server upon receiving the POST data
-        }
-    }
 
 
     private class SendDeviceDetails extends AsyncTask<String, Void, String> {
